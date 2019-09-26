@@ -1,0 +1,21 @@
+branch: development
+container_config:
+  network_mode: host
+description: Play a notification out loud through a Chromecast device like Google Home Mini
+dockerhub: egeoffrey/egeoffrey-notification-chromecast
+github: egeoffrey/egeoffrey-notification-chromecast
+icon: volume-up
+manifest_schema: 2
+modules:
+- notification/chromecast:
+    description: Play a notification through a Chromecast device
+    module_configuration:
+    - description: The hostname/IP address of the Chromecast device
+      format: string
+      name: hostname
+      placeholder: 192.168.0.53
+      required: true
+package: egeoffrey-notification-chromecast
+revision: 1
+tags: notification speaker voice chromecast
+version: 1.0
