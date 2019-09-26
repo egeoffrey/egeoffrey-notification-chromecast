@@ -44,7 +44,8 @@ egeoffrey-cli build egeoffrey-notification-chromecast <amd64|arm>
 ```
 To function properly, when running in a Docker container, the following additional configuration settings has to be added to e.g. your docker-compose.yml file (when installing through egeoffrey-cli, this is not needed since done automatically upon installation):
 ```
-network_mode: host
+ports:
+- 8081:8081
 ```
 
 ## Uninstall
@@ -63,4 +64,4 @@ notification speaker voice chromecast
 
 ## Version
 
-The version of this egeoffrey-notification-chromecast is 1.0-2 on the development branch.
+The version of this egeoffrey-notification-chromecast is 1.0-3 on the master branch.
