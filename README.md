@@ -1,16 +1,16 @@
-# egeoffrey-notification-speaker
+# egeoffrey-notification-chromecast
 
 This is an eGeoffrey notification package.
 
 ## Description
 
-Play a notification out loud through an attached speaker.
+Play a notification out loud through a Chromecast device like Google Home Mini.
 
 ## Install
 
 To install this package, run the following command from within your eGeoffrey installation directory:
 ```
-egeoffrey-cli install egeoffrey-notification-speaker
+egeoffrey-cli install egeoffrey-notification-chromecast
 ```
 After the installation, remember to run also `egeoffrey-cli start` to ensure the Docker image of the package is effectively downloaded and started.
 To validate the installation, go and visit the *'eGeoffrey Admin'* / *'Packages'* page of your eGeoffrey instance. All the modules, default configuration files and out-of-the-box contents if any will be automatically deployed and made available.
@@ -21,13 +21,10 @@ The following modules are included in this package.
 For each module, if requiring a configuration file to start, its settings will be listed under *'Module configuration'*. Additionally, if the module is a service, the configuration expected to be provided by each registered sensor associated to the service is listed under *'Service configuration'*.
 
 To configure each module included in this package, once started, click on the *'Edit Configuration'* button on the *'eGeoffrey Admin'* / *'Modules'* page of your eGeoffrey instance.
-- **notification/speaker**: play a notification out loud through an attached speaker
+- **notification/chromecast**: play a notification through a Chromecast device
   - Module configuration:
-    - *engine**: the text-to-speach engine to use (e.g. user@email.com)
-    - *device*: the ALSA device the speaker is attached to (e.g. plughw:1,0)
-    - *bluetooth_speaker**: weather the speaker has to be connected through bluetooth
-    - *bluetooth_speaker_mac_address*: the MAC address of the bluetooth speaker (e.g. F5:B6:AB:45:63:C6)
-    - *bluetooth_speaker_mac_address*: the volume to set to the speaker (e.g. 100)
+    - *device_ip**: the hostname/IP address of the Chromecast device (e.g. 192.168.0.53)
+    - *local_ip**: the IP address where this module runs (the device will connect back here to play the audio) (e.g. 192.168.0.254)
 
 ## Contribute
 
@@ -41,9 +38,9 @@ If you are a user willing to contribute to somebody's else package, submit your 
 
 ## Build
 
-Building is required only if you are the author of the package. To build a Docker image and automatically push it to [Docker Hub](https://hub.docker.com/r/egeoffrey/egeoffrey-notification-speaker), run the following command from within this package's directory:
+Building is required only if you are the author of the package. To build a Docker image and automatically push it to [Docker Hub](https://hub.docker.com/r/egeoffrey/egeoffrey-notification-chromecast), run the following command from within this package's directory:
 ```
-egeoffrey-cli build egeoffrey-notification-speaker <amd64|arm>
+egeoffrey-cli build egeoffrey-notification-chromecast <amd64|arm>
 ```
 To function properly, when running in a Docker container, the following additional configuration settings has to be added to e.g. your docker-compose.yml file (when installing through egeoffrey-cli, this is not needed since done automatically upon installation):
 ```
@@ -54,16 +51,16 @@ network_mode: host
 
 To uninstall this package, run the following command from within your eGeoffrey installation directory:
 ```
-egeoffrey-cli uninstall egeoffrey-notification-speaker
+egeoffrey-cli uninstall egeoffrey-notification-chromecast
 ```
 Remember to run also `egeoffrey-cli start` to ensure the changes are correctly applied.
 ## Tags
 
 The following tags are associated to this package:
 ```
-notification speaker voice
+notification speaker voice chromecast
 ```
 
 ## Version
 
-The version of this egeoffrey-notification-speaker is 1.0-17 on the master branch.
+The version of this egeoffrey-notification-chromecast is 1.0-2 on the development branch.

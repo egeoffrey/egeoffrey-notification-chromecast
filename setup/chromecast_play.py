@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# Usage: chromecast_play.py <ip> <language> <what to say>
+# Usage: chromecast_play.py <local_ip> <device_ip> <language> <what to say>
 import sys
 import pychromecast
 import os
@@ -12,22 +12,17 @@ import hashlib
 audio_output = "audio_output.mp3"
 #web port to expose
 port = "8081"
+# get the local ip address
+local_ip = sys.argv[1]
 # get ip of the chromecast device
-ip = sys.argv[1]
+device_ip = sys.argv[2]
 # get the language
-lang = sys.argv[2]
+lang = sys.argv[3]
 # get what to say
-say = sys.argv[3]
-
-# retrieve local ip
-import socket
-s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-s.connect(("8.8.8.8", 80))
-local_ip=s.getsockname()[0]
-s.close()
+say = sys.argv[4]
 
 # connect to the chromecast device
-castdevice = pychromecast.Chromecast(ip)
+castdevice = pychromecast.Chromecast(device_ip)
 castdevice.wait()
 
 # create the audio file
