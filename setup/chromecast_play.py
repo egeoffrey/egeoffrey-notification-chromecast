@@ -6,7 +6,6 @@ import os
 import os.path
 from gtts import gTTS
 import time
-import hashlib
 
 # file to create and play 
 audio_output = "audio_output.mp3"
@@ -25,6 +24,9 @@ say = sys.argv[4]
 castdevice = pychromecast.Chromecast(device_ip)
 castdevice.wait()
 
+# delete the file
+if os.path.isfile("/var/www/html/"+audio_output): os.remove("/var/www/html/"+audio_output)
+
 # create the audio file
 tts = gTTS(say, lang=lang)
 tts.save("/var/www/html/"+audio_output)
@@ -40,6 +42,3 @@ while not mc.status.player_is_idle:
    time.sleep(0.5)
 mc.stop()
 castdevice.quit_app()
-
-# delete the file
-os.remove("/var/www/html/"+audio_output)
