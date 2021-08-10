@@ -1,4 +1,4 @@
-branch: master
+branch: development
 container_config:
   ports:
   - 8081:8081
@@ -24,6 +24,6 @@ modules:
       placeholder: 192.168.0.254
       required: true
 package: egeoffrey-notification-chromecast
-revision: 9
+revision: 1
 tags: notification speaker voice chromecast
-version: 1.0
+version: 1.1
