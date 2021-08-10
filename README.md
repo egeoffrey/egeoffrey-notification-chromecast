@@ -64,4 +64,4 @@ notification speaker voice chromecast
 
 ## Version
 
-The version of this egeoffrey-notification-chromecast is 1.1-1 on the development branch.
+The version of this egeoffrey-notification-chromecast is 1.1-2 on the development branch.

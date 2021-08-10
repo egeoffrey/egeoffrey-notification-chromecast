@@ -24,6 +24,6 @@ modules:
       placeholder: 192.168.0.254
       required: true
 package: egeoffrey-notification-chromecast
-revision: 1
+revision: 2
 tags: notification speaker voice chromecast
 version: 1.1

@@ -30,8 +30,10 @@ class Chromecast(Notification):
     # What to do when running
     def on_start(self):
         self.log_info("Starting webserver...")
-        self.log_debug(sdk.python.utils.command.run("cp -f setup/nginx.conf /etc/nginx/sites-available/default"))
-        self.log_debug(sdk.python.utils.command.run("/etc/init.d/nginx restart"))
+        self.log_debug(sdk.python.utils.command.run("mkdir -p /var/run/nginx"))
+        self.log_debug(sdk.python.utils.command.run("mkdir -p /var/www/html"))
+        self.log_debug(sdk.python.utils.command.run("cp -f setup/nginx.conf /etc/nginx/conf.d/default.conf"))
+        self.log_debug(sdk.python.utils.command.run("killall nginx; nginx"))
             
     # What to do when shutting down
     def on_stop(self):
