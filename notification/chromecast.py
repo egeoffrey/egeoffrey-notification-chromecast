@@ -33,7 +33,7 @@ class Chromecast(Notification):
         self.log_debug(sdk.python.utils.command.run("mkdir -p /var/run/nginx"))
         self.log_debug(sdk.python.utils.command.run("mkdir -p /var/www/html"))
         self.log_debug(sdk.python.utils.command.run("cp -f setup/nginx.conf /etc/nginx/conf.d/default.conf"))
-        self.log_debug(sdk.python.utils.command.run("killall nginx; nginx"))
+        self.log_debug(sdk.python.utils.command.run("killall nginx; sleep 3; nginx"))
             
     # What to do when shutting down
     def on_stop(self):
